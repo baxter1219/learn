@@ -4,11 +4,16 @@ using namespace std;
 #define week 7
 int main()
 {
-    cout << "输入的数字是 " << endl;
-    cout << "输入的数字是 " << endl;
 
     return 0;
 }
+// int main()
+// {
+//     cout << "输入的数字是 " << endl;
+//     cout << "输入的数字是 " << endl;
+
+//     return 0;
+// }
 // int main()
 // {
 //     int a = 0;
