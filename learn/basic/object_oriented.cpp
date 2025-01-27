@@ -2,17 +2,79 @@
 #include <string>
 using namespace std;
 
-class circle
+/*
+******使用默认构造函数的时候，不要加括号******·
+————>可能会被编译器误认为是函数声明
+
+
+初始化和删除
+构造函数
+{
+按参数构造：有参构造（）
+            和无参构造（编译器自带无参构造）
+按类型构造
+}
+
+拷贝构造函数
+person (const person &p)
+{
+    // 将传入的对象的属性拷贝给当前对象
+    name = p.name;
+    age = p.age;
+    height = p.height;
+}
+
+析构函数
+
+2.显示法
+{
+    person p1;
+    person p2 = person();
+    person p3 = person("张三", 18, 180);
+    person p4 = person(p3);
+    person p5("zhansan", 18, 180);匿名对象，当前行执行完毕后立即释放
+}
+
+不要用拷贝构造函数初始化匿名对象，会被编译器优化掉
+person(p3) == person p3;
+
+3.隐式法
+{
+    person p1 =10; // 相当于person p1 = person(10);
+}
+
+
+
+
+
+
+
+
+*/
+class person
 {
 public:
-private:
-    int m_r;
-    int m_x;
-    int m_y;
+    person() // 创建时自动调用
+    {
+        cout << "show" << endl;
+    }
+    ~person() // 销毁前自动调用
+    {
+        cout << "delete" << endl;
+        system("pause");
+    }
 };
+
+void test() // 临时创建函数然后删除
+{
+    person p1;
+}
 
 int main()
 {
+    test();
+
+    person p1;
 
     return 0;
 }
