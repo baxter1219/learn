@@ -2,57 +2,72 @@
 #include <string>
 using namespace std;
 
-/*
-类的权限:分三种
-public:公共权限，类内可以访问，类外可以访问
-protected:保护权限，类内可以访问，类外不可以访问，子类可以访问
-private:私有权限，类内可以访问，类外不可以访问，子类不可以访问
-
-**********
-通过公有的函数，私有的属性，来间接控制私有属性的权限
-
-
-*/
-class person
+class circle
 {
 public:
-    string name; // 姓名
-    int age;     // 年龄
-    int height;  // 身高
-    void ziwojieshao(string name, int age, int height)
-    {
-        this->name = name;
-        this->age = age;
-        this->height = height;
-        cout << "自我介绍" << "\t";
-        cout << "姓名：" << name << " 年龄：" << age << " 身高：" << height << endl;
-        jieshao();
-    }
-
-protected:
-    string girlfriend = "李四"; // 女朋友
-    void jieshao()
-    {
-        cout << "介绍" << "\t\t";
-        cout << "我叫" << name << ",我的女朋友叫" << girlfriend << endl;
-    }
-
 private:
-    int password = 234; // 密码
+    int m_r;
+    int m_x;
+    int m_y;
 };
 
 int main()
 {
-    person p1;
-    p1.name = "张三";
-    p1.age = 18;
-    p1.height = 180;
-    p1.ziwojieshao(p1.name, p1.age, p1.height); // 自我介绍函数中调佣了介绍函数，介绍函数是保护权限，类外不可以访问，但是内部可以访问
-    // p1.girlfriend = "小红"; // 保护权限，类外不可以访问
-    // p1.jieshao();     // 私有权限，类外不可以访问
-    system("pause");
+
     return 0;
 }
+
+// /*
+// 类的权限:分三种
+// public:公共权限，类内可以访问，类外可以访问
+// protected:保护权限，类内可以访问，类外不可以访问，子类可以访问
+// private:私有权限，类内可以访问，类外不可以访问，子类不可以访问
+
+// **********
+// 通过公有的函数，私有的属性，来间接控制私有属性的权限
+//
+
+// */
+// class person
+// {
+// public:
+//     string name; // 姓名
+//     int age;     // 年龄
+//     int height;  // 身高
+//     void ziwojieshao(string name, int age, int height)
+//     {
+//         this->name = name;
+//         this->age = age;
+//         this->height = height;
+//         cout << "自我介绍" << "\t";
+//         cout << "姓名：" << name << " 年龄：" << age << " 身高：" << height << endl;
+//         jieshao();
+//     }
+
+// protected:
+//     string girlfriend = "李四"; // 女朋友
+//     void jieshao()
+//     {
+//         cout << "介绍" << "\t\t";
+//         cout << "我叫" << name << ",我的女朋友叫" << girlfriend << endl;
+//     }
+
+// private:
+//     int password = 234; // 密码
+// };
+
+// int main()
+// {
+//     person p1;
+//     p1.name = "张三";
+//     p1.age = 18;
+//     p1.height = 180;
+//     p1.ziwojieshao(p1.name, p1.age, p1.height); // 自我介绍函数中调佣了介绍函数，介绍函数是保护权限，类外不可以访问，但是内部可以访问
+//     // p1.girlfriend = "小红"; // 保护权限，类外不可以访问
+//     // p1.jieshao();     // 私有权限，类外不可以访问
+//     system("pause");
+//     return 0;
+// }
 
 // // 类模板
 // class Person
